@@ -1,0 +1,49 @@
+package com.encapsulation;
+import java.util.Scanner;
+public class Product
+{
+	private String name;
+	private int productId;
+	private double price;
+	public void accept()
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the product name: ");
+		setName(sc.next());
+		System.out.println("Enter the product id: ");
+		setProductId(sc.nextInt());
+		System.out.println("Enter the product price: ");
+		setPrice(sc.nextDouble());
+	}
+	public void display()
+	{
+		System.out.println("-----Product Details-----");
+		System.out.println("Name: "+getName());
+		System.out.println("ID: "+getProductId());
+		System.out.println("Price: "+getPrice());
+	}
+	public void setName(String n)
+	{
+		name=n;
+	}
+	public String getName()
+	{
+		return name;
+	}
+	public void setProductId(int i)
+	{
+		productId=i;
+	}
+	public int getProductId()
+	{
+		return productId;
+	}
+	public void setPrice(double p)
+	{
+		price=p;
+	}
+	public double getPrice()
+	{
+		return price;
+	}
+}
