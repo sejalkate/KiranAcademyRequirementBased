@@ -1,0 +1,49 @@
+package com.encapsulation;
+import java.util.Scanner;
+public class Employee
+{
+	private String name,post;
+	private double salary;
+	public void accept()
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the name: ");
+		setName(sc.next());
+		System.out.println("Enter the post: ");
+		setPost(sc.next());
+		System.out.println("Enter the salary: ");
+		setSalary(sc.nextDouble());
+	}
+	public void display() 
+	{
+		System.out.println("------Employee Details------");
+		System.out.println("Name: "+getName());
+		System.out.println("Post: "+getPost());
+		System.out.println("Salary: "+getSalary());
+	}
+	public void setName(String n)
+	{
+		name=n;
+	}
+	public String getName()
+	{
+		return name;
+	}
+	
+	public void setPost(String p)
+	{
+		post=p;
+	}
+	public String getPost()
+	{
+		return post;
+	}
+	public void setSalary(double s)
+	{
+		salary=s;
+	}
+	public double getSalary()
+	{
+		return salary;
+	}
+}
