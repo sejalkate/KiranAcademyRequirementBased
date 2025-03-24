@@ -1,0 +1,66 @@
+package com.methods;
+import java.util.Scanner;
+public class Employee
+{
+	int empId,sal;
+	String name,companyName,des;
+	public void accept()
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the employee ID: ");
+		empId=sc.nextInt();
+		System.out.println("Enter the employee name: ");
+		name=sc.next();
+		System.out.println("Enter the company name: ");
+		companyName=sc.next();
+		System.out.println("Enter the employee designation: ");
+		des=sc.next();
+		System.out.println("Enter the employee salary");
+		sal=sc.nextInt();
+	}
+	public int getID()
+	{
+		return empId;
+	}
+	public String getName()
+	{
+		return name;
+	}
+	public String getCompanyName()
+	{
+		return companyName;
+	}
+	public int getSal()
+	{
+		return sal;
+	}
+	public String getDes()
+	{
+		return des;
+	}
+	public void display()
+	{
+		System.out.println("Employee ID:"+getID());
+		System.out.println("Name: "+getName());
+		System.out.println("Company Name: "+getCompanyName());
+		System.out.println("Designation: "+getDes());
+		System.out.println("Salary: "+getSal());
+		System.out.println("********************");
+	}
+	public static void main(String[] args) 
+	{
+		Employee e1=new Employee();
+		Employee e2=new Employee();
+		Employee e3=new Employee();
+		System.out.println("Enter the details of Employee 1:");
+		e1.accept();
+		System.out.println("Enter the details of Employee 2:");
+		e2.accept();
+		System.out.println("Enter the details of Employee 3:");
+		e3.accept();
+		System.out.println("-----Employee Details-----");
+		e1.display();
+		e2.display();
+		e3.display();
+	}
+}
