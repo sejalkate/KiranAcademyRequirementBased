@@ -1,0 +1,25 @@
+package com.constructor;
+public class Book 
+{
+	String bookName,bookAuthor;
+	double bookPrice,total;
+	int quantity;
+	//Parameterized
+	public Book(String n,String a,double p,int q)
+	{
+		bookName=n;
+		bookAuthor=a;
+		bookPrice=p;
+		quantity=q;
+	}
+	public void display()
+	{
+		System.out.println("---Book Details---");
+		System.out.println("Name: "+bookName);
+		System.out.println("Author: "+bookAuthor);
+		System.out.println("Price: "+bookPrice);
+		System.out.println("Quantity: "+quantity);
+		System.out.println("Total: "+bookPrice*quantity);
+		
+	}
+}
