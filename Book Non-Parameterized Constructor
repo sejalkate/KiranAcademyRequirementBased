@@ -1,0 +1,33 @@
+package com.constructor;
+
+import java.util.Scanner;
+
+public class BookN 
+{
+	String bookName,bookAuthor;
+	double bookPrice,total;
+	int quantity;
+	//Non-parameterized
+	public BookN()
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the name: ");
+		bookName=sc.next();
+		System.out.println("Enter the author name: ");
+		bookAuthor=sc.next();
+		System.out.println("Enter the price: ");
+		bookPrice=sc.nextDouble();
+		System.out.println("Enter the quantity: ");
+		quantity=sc.nextInt();
+	}
+	public void display()
+	{
+		System.out.println("---Book Details---");
+		System.out.println("Name: "+bookName);
+		System.out.println("Author: "+bookAuthor);
+		System.out.println("Price: "+bookPrice);
+		System.out.println("Quantity: "+quantity);
+		System.out.println("Total: "+bookPrice*quantity);
+		
+	}
+}
