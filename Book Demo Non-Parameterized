@@ -1,0 +1,10 @@
+package com.constructor;
+
+public class BookNDemo 
+{
+	public static void main(String[] args) 
+	{
+		BookN b1=new BookN();
+		b1.display();
+	}
+}
