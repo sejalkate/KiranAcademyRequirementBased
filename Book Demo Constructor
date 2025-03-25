@@ -1,0 +1,9 @@
+package com.constructor;
+public class BookDemo 
+{
+	public static void main(String[] args) 
+	{
+		Book b1=new Book("Mahabharat","Maharshi_Vyas",200,2);
+		b1.display();
+	}
+}
