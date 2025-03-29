@@ -1,0 +1,59 @@
+package com.sorting;
+import java.util.Scanner;
+public class BubbleSort
+{
+	public void accept(int arr[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter elements in array: ");
+		for(int i=0;i<arr.length;i++)
+		{
+			arr[i]=sc.nextInt();
+		}
+	}
+	public void display(int arr[])
+	{
+		for(int i=0;i<arr.length;i++)
+		{
+			System.out.print(arr[i]+" ");
+		}
+	}
+	public void bubbleSort(int arr[])
+	{
+		for(int i=0;i<arr.length-1;i++)
+		{
+			for(int j=0;j<arr.length-1-i;j++)
+			{
+				if(arr[j]>arr[j+1])
+				{
+					int temp=arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=temp;
+				}
+			}
+		}
+	}
+}
+
+
+
+package com.sorting;
+import java.util.Scanner;
+public class BubbleSortDemo 
+{
+	public static void main(String[] args) 
+	{
+		BubbleSort b=new BubbleSort();
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter the number of elements: ");
+		int n=sc.nextInt();
+		int arr[]=new int[n];
+		b.accept(arr);
+		System.out.println("Before Sorting---->");
+		b.display(arr);
+		System.out.println();
+		b.bubbleSort(arr);
+		System.out.println("After Sorting---->");
+		b.display(arr);
+	}
+}
