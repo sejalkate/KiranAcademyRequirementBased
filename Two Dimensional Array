@@ -1,0 +1,39 @@
+package com.array;
+import java.util.Scanner;
+public class TwoDimensionalArray 
+{
+	public void acceptData(int arr[][])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the elements in Array: ");
+		for(int i=0;i<3;i++)
+		{
+			for(int j=0;j<3;j++)
+			{
+				arr[i][j]=sc.nextInt();
+			}
+		}
+	}
+	public void showData(int arr[][])
+	{
+		System.out.println("Two dimensional array--->");
+		for(int i=0;i<3;i++)
+		{
+			for(int j=0;j<3;j++)
+			{
+				System.out.print(arr[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+	public static void main(String[] args)
+	{
+		int arr1[][]=new int[3][3];
+		int arr2[][]=new int[3][3];
+		TwoDimensionalArray t1=new TwoDimensionalArray();
+		t1.acceptData(arr1);
+		t1.showData(arr1);
+		t1.acceptData(arr2);
+		t1.showData(arr2);
+	}
+}
