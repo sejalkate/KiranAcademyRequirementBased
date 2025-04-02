@@ -1,0 +1,64 @@
+package com.inheritance;
+import java.util.Scanner;
+public class Person
+{
+	String name;
+	int age;
+	String address;
+	public void acceptP()
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the name: ");
+		name=sc.next();
+		System.out.println("Enter the age: ");
+		age=sc.nextInt();
+		System.out.println("Enter the address: ");
+		address=sc.next();	
+	}
+	public void showP()
+	{
+		System.out.println("Name: "+name);
+		System.out.println("Age: "+age);
+		System.out.println("Address: "+address);
+	}
+}
+
+package com.inheritance;
+import java.util.Scanner;
+public class Student extends Person
+{
+	String course;
+	double marks;
+	public void acceptS()
+	{
+		acceptP();
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter the course: ");
+        course=sc.nextLine();
+        System.out.print("Enter marks: ");
+        marks=sc.nextDouble();
+	}
+	public void showS()
+	{
+		System.out.println();
+		System.out.println("Student's Properties");
+		showP();
+		System.out.println("Course: "+course);
+		System.out.println("Marks: "+marks);
+	}
+	
+}
+
+package com.inheritance;
+public class DemoStudent
+{
+	public static void main(String[] args) 
+	{
+		Student s1=new Student();
+		s1.acceptS();
+		System.out.println();
+		System.out.println("Persons's Properties");
+		s1.showP();
+		s1.showS();
+	}
+}
