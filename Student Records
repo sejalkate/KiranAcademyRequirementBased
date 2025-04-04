@@ -1,0 +1,114 @@
+package com.this_super;
+import java.util.Scanner;
+public class Person 
+{
+	private String name;
+	private int age;
+	public String getName()
+	{
+		return name;
+	}
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	public int getAge()
+	{
+		return age;
+	}
+	public void setAge(int age) 
+	{
+		this.age = age;
+	}
+	public Person()
+	{
+		
+	}
+	public Person(String n,int a)
+	{
+		this.name=n;
+		this.age=a;
+	}
+	public void acceptP()
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the Name: ");
+		setName(sc.next());
+		System.out.println("Enter the Age: ");
+		setAge(sc.nextInt());
+	}
+	public void showP()
+	{
+		System.out.println("Name: "+getName());
+		System.out.println("Age: "+getAge());
+	}
+	
+}
+
+
+public class Student extends Person
+{
+	private int rollNo;
+	private double marks;
+	public int getRollNo()
+	{
+		return rollNo;
+	}
+	public void setRollNo(int rollNo) 
+	{
+		this.rollNo = rollNo;
+	}
+	public double getMarks() 
+	{
+		return marks;
+	}
+	public void setMarks(double marks)
+	{
+		this.marks = marks;
+	}
+	public Student()
+	{
+		super();
+	}
+	public Student(String name, int age,int rollNo,double marks)
+	{
+		super(name,age);
+		this.rollNo=rollNo;
+		this.marks=marks;
+	}
+	public void acceptS()
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the rollNo: ");
+		setRollNo(sc.nextInt());
+		System.out.println("Enter the marks: ");
+		setMarks(sc.nextDouble());
+	}
+	public void showS()
+	{
+		System.out.println();
+		System.out.println("Student Details: ");
+		super.showP();
+		System.out.println("RollNo: "+getRollNo());
+		System.out.println("Marks: "+getMarks());
+		System.out.println();
+	}
+}
+
+
+public class StudentDemo 
+{
+	public static void main(String[] args) 
+	{
+		Student s1=new Student("ABC",21,101,99);
+		Student s2=new Student("DEF",22,102,89);
+		Student s3=new Student("GHI",23,103,79);
+		Student s4=new Student("KLM",24,104,69);
+		Student s5=new Student("NOP",24,105,59);
+		s1.showS();
+		s2.showS();
+		s3.showS();
+		s4.showS();
+		s5.showS();
+	}
+}
