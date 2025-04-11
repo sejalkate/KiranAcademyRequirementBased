@@ -1,0 +1,79 @@
+package Overriding;
+public class Member
+{
+	String name,address;
+	int age;
+	long phoneNo;
+	double salary;
+	
+	public void printSalary()
+	{
+		System.out.println("Salary: "+salary);
+	}
+
+	public Member(String name, String address, int age, long phoneNo, double salary) 
+	{
+		this.name = name;
+		this.address = address;
+		this.age = age;
+		this.phoneNo = phoneNo;
+		this.salary = salary;
+	}
+}
+
+public class Employee extends Member
+{
+	String specialization;
+	public Employee(String name, String address, int age, long phoneNo, double salary, String specialization) 
+	{
+		super(name, address, age, phoneNo, salary);
+		this.specialization=specialization;
+	}
+	public void display()
+	{
+		System.out.println("Employee's Details--->");
+		System.out.println("Name : "+name);
+		System.out.println("Age : "+age);
+		System.out.println("Address : "+address);
+		System.out.println("PhoneNo : "+phoneNo);
+		System.out.println("Salary : "+salary);
+		System.out.println("Specialization: "+specialization);
+	}
+}
+
+public class Manager extends Member
+{
+	String department;
+	public Manager(String name, String address, int age, long phoneNo, double salary, String department)
+	{
+		super(name, address, age, phoneNo, salary);
+		this.department=department;
+	}
+	public void display()
+	{
+		System.out.println("Manager's Details--->");
+		System.out.println("Name : "+name);
+		System.out.println("Age : "+age);
+		System.out.println("Address : "+address);
+		System.out.println("PhoneNo : "+phoneNo);
+		System.out.println("Salary : "+salary);
+		System.out.println("Department: "+department);
+	}
+}
+
+
+public class MemberDemo 
+{
+	public static void main(String[] args) 
+	{
+		Employee e1=new Employee("Sejal","Pune",21,9767976271l,90000,"Java Developer");
+		e1.display();
+		System.out.println();
+		e1.printSalary();
+		System.out.println();
+		Manager m1=new Manager("S","P",22,97l,80000,"Sales");
+		m1.display();
+	}
+}
+
+
