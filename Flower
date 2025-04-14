@@ -1,0 +1,126 @@
+package com.abstraction;
+//Rose Lotus SunFlower DemoFlower
+public abstract class Flower
+{
+	//Properties of flower
+	private String color;
+	private String name;
+	
+	//Non-parameterized constructor
+	public Flower()
+	{
+		
+	}
+	
+	//Parameterized constructor
+	public Flower(String name,String color)
+	{
+		this.name=name;
+		this.color=color;
+	}
+	
+	//Abstract methods
+	public abstract String smell();
+	public abstract boolean isFork();
+	
+	//Getter-Setter methods
+	public String getName()
+	{
+		return name;
+	}
+	public void setName(String name)
+	{
+		this.name=name;
+	}
+	public String getColor()
+	{
+		return color;
+	}
+	public void setColor(String color)
+	{
+		this.color=color;
+	}
+}
+
+
+public class Rose extends Flower
+{
+	public Rose()
+	{
+		super();
+	}
+	public Rose(String name,String color)
+	{
+		super(name,color);
+	}
+	@Override
+	public String smell()
+	{
+		return "Sweet";
+	}
+	public boolean isFork()
+	{
+		return false;
+	}
+}
+
+public class Lotus extends Flower
+{
+	public Lotus()
+	{
+		super();
+	}
+	public Lotus(String name,String color)
+	{
+		super(name,color);
+	}
+	@Override
+	public String smell()
+	{
+		return "Mild";
+	}
+	public boolean isFork()
+	{
+		return false;
+	}
+
+}
+
+
+public class SunFlower extends Flower {
+	public SunFlower()
+	{
+		super();
+	}
+	public SunFlower(String name,String color)
+	{
+		super(name,color);
+	}
+	@Override
+	public String smell()
+	{
+		return "Earthy";
+	}
+	public boolean isFork()
+	{
+		return false;
+	}
+
+}
+
+
+public class DemoFlower 
+{
+	public static void main(String[] args) 
+	{
+		Rose r=new Rose("Rose","Red");
+		Lotus l=new Lotus("Lotus","Pink");
+		SunFlower s=new SunFlower("Sun Flower","SunFlower");
+		System.out.println("Rose     : Name= "+r.getName()+",       Color= "+r.getColor()+",       Smell= "+r.smell());
+		System.out.println("Lotus    : Name= "+l.getName()+",      Color= "+l.getColor()+",      Smell= "+l.smell());
+		System.out.println("SunFlower: Name= "+s.getName()+", Color= "+s.getColor()+", Smell= "+s.smell());
+	}
+}
+
+
+
