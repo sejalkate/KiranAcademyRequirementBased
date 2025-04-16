@@ -1,0 +1,66 @@
+package com.interfacePrograms;
+//Shape3D Sphere Cube Shape3Ddemo
+public abstract class Shape3D 
+{
+	public abstract void calculateVolume();
+	public abstract void calculateSurfaceArea();
+}
+
+public class Sphere extends Shape3D
+{
+	private double radius;
+	public Sphere(double radius)
+	{
+		this.radius=radius;	}
+	@Override
+	public void calculateVolume() 
+	{
+		double volume=(4.0/3.0)*Math.PI*Math.pow(radius,3);
+		System.out.println("Volume of Sphere: "+volume);
+	}
+	@Override
+	public void calculateSurfaceArea() 
+	{
+		double sarea=4*Math.PI*Math.pow(radius,2);
+		System.out.println("Surface Area of Sphere: "+sarea);
+	}
+}
+
+
+public class Cube extends Shape3D
+{
+	private double side;
+	public Cube(double side)
+	{
+		this.side=side;
+	}
+	@Override
+	public void calculateVolume()
+	{
+		double volume=Math.pow(side, 3);
+		System.out.println("Volume of Cube: "+volume);
+	}
+	@Override
+	public void calculateSurfaceArea()
+	{
+		double sarea=6*Math.pow(side, 2);
+		System.out.println("Surface area of Cube: "+sarea);
+	}
+}
+
+
+public class Shape3Ddemo 
+{
+	public static void main(String[] args) 
+	{
+		Sphere s=new Sphere(5);
+		Cube c=new Cube(4);
+		s.calculateVolume();
+		s.calculateSurfaceArea();
+		System.out.println();
+		c.calculateVolume();
+		c.calculateSurfaceArea();
+	}
+}
+
+
