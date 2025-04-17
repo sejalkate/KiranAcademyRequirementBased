@@ -1,0 +1,97 @@
+package com.interfaceNew;
+//BankOperations LoanOperations UserAccount UseAccountDemo
+public interface BankOperations 
+{
+	public abstract void deposite(double amount);
+	public abstract void withdraw(double amount);
+	public abstract void checkBalane();
+}
+
+
+public interface LoanOperations 
+{
+	public abstract void applyLoan(double amount);
+	public abstract void loanStatus();
+	void deposite(double amount);
+}
+
+
+public class UserAcoount implements BankOperations,LoanOperations
+{
+	private double balance=50000;
+	private boolean loanApproved;
+	private double loanAmount;
+	@Override
+	public void applyLoan(double amount) 
+	{
+		if(amount>0 && balance>1000)
+		{
+			loanAmount=amount;
+			loanApproved=true;
+		}
+		else
+		{
+			System.out.println("Your loan cannot be approved. You need minimum balance 1000.");
+		}
+	}
+	@Override
+	public void loanStatus()
+	{
+		if(loanApproved==true)
+		{
+			System.out.println("LoanAmount: "+loanAmount);
+			System.out.println("Loan is approved");
+		}
+		else
+		{
+			System.out.println("Your loan has not approved yet.");
+		}
+	}
+	@Override
+	public void deposite(double amount) 
+	{
+		if(amount>0)
+		{
+			balance=balance+amount;
+		}
+		else
+		{
+			System.out.println("Enter the amount greater than 0");
+		}
+	}
+	@Override
+	public void withdraw(double amount) 
+	{
+		if(amount>0 && amount<balance)
+		{
+			balance=balance-amount;
+		}
+		else
+		{
+			System.out.println("Unable to withdraw");
+		}
+	}
+	@Override
+	public void checkBalane() 
+	{
+		System.out.println("Balance: "+balance);
+	}
+}
+
+
+public class UserAccountDemo
+{
+	public static void main(String[] args) 
+	{
+		UserAcoount u=new UserAcoount();
+		u.checkBalane();
+		u.deposite(1000);
+		u.checkBalane();
+		u.withdraw(500);
+		u.checkBalane();
+		u.applyLoan(2000);
+		u.loanStatus();
+	}
+}
+
+
